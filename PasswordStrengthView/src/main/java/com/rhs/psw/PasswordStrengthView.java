@@ -123,7 +123,7 @@ public class PasswordStrengthView extends View {
     }
 
     public void update(String str) {
-        switch (calculator.calculate(str, Calculator.FRACTIONAL)) {
+        switch (calculator.calculate(str, Calculator.INCREMENTAL)) {
             case VERY_STRONG:
                 paint.setColor(veryStrongColor);
                 break;
