@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Blue">#0481FF</color>
+    <color name="Orange">#FFA000</color>
+    <color name="Pink">#ff4081</color>
+    <color name="Indigo">#8c9eff</color>
+    <color name="SkyBlue">#42A5F5</color>
+    <color name="Red">#F81541</color>
+    <color name="Yellow">#fecd1a</color>
+    <color name="Green">#00c754</color>
+    <color name="Wood">#db6400</color>
+    <color name="Purple">#6B3DC8</color>
+    <color name="LightPink">#fca3cc</color>
+    <color name="BGCOLOR">#55777777</color>
+    <color name="progressGreen">#76FF03</color>
+
+    <color name="charge">#00c754</color>
+    <color name="sfdfsd">#FF5722</color>
+    <color name="usage">#FFA000</color>
+    <!--  <color name="usage">#de3726</color>-->
+    <color name="white">#FFFFFFFF</color>
+</resources>
