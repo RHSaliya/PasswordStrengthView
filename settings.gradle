@@ -1,0 +1,3 @@
+rootProject.name = "PSView"
+include ':app'
+include ':PasswordStrengthView'

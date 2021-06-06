@@ -1,0 +1,15 @@
+<resources>
+    <declare-styleable name="PasswordStrengthView">
+        <attr name="very_strong_color" format="color" />
+        <attr name="strong_color" format="color" />
+        <attr name="medium_color" format="color" />
+        <attr name="ok_color" format="color" />
+        <attr name="weak_color" format="color" />
+        <attr name="empty_color" format="color"/>
+        <attr name="scores" format="string"/>
+        <attr name="indicatorHeight" format="dimension"/>
+        <attr name="indicatorRadius" format="dimension"/>
+        <attr name="indicatorWidth" format="dimension"/>
+        <attr name="space_between" format="dimension"/>
+    </declare-styleable>
+</resources>
