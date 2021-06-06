@@ -31,3 +31,6 @@ or use update method
 ```java
 passwordSV.update(String password);
 ```
+
+#use with maven
+maven { url ‘https://jitpack.io’ }
