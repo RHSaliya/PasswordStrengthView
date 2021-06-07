@@ -28,7 +28,7 @@ Add  dependency in your app gradle file.
 	implementation 'com.github.RHSaliya:PasswordStrengthView:1.0'
 ```
 
-
+Add view on your layout
 ```xml
 <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV"
@@ -47,4 +47,11 @@ or use update method
 
 ```java
 passwordSV.update(String password);
+```
+
+To just calculate strength
+```java
+	Calculator calculator = new Calculator();
+        calculator.initScores(10,20,30,40);
+        calculator.calculate("Password",Calculator.INCREMENTAL);
 ```
