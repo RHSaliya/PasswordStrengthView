@@ -12,6 +12,23 @@ This is an android library to represent password strength.
 
 
 # How to use?
+
+Add maven to your project gradle file
+```java
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+
+Add  dependency in your app gradle file.
+```java
+	implementation 'com.github.RHSaliya:PasswordStrengthView:1.0'
+```
+
+
 ```xml
 <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV"
@@ -31,6 +48,3 @@ or use update method
 ```java
 passwordSV.update(String password);
 ```
-
-#use with maven
-maven { url ‘https://jitpack.io’ }
