@@ -23,7 +23,7 @@ allprojects {
 
 Add  dependency in your app gradle file.
 ```java
-	implementation 'com.github.RHSaliya:PasswordStrengthView:v1.1'
+	implementation 'com.github.RHSaliya:PasswordStrengthView:1.1'
 ```
 
 Add view on your layout
