@@ -3,12 +3,13 @@ This is an android library to represent password strength.
 
 
 # Preview
-![image](https://user-images.githubusercontent.com/46835920/120934020-470c5600-c71a-11eb-8499-4394d79fde9c.png)
-![image](https://user-images.githubusercontent.com/46835920/120933956-0e6c7c80-c71a-11eb-954a-127234e45ad1.png)
-![image](https://user-images.githubusercontent.com/46835920/120933965-162c2100-c71a-11eb-87f9-9cbe6cd1b66e.png)
-![image](https://user-images.githubusercontent.com/46835920/120933973-1debc580-c71a-11eb-96f5-ba140baa83b1.png)
-![image](https://user-images.githubusercontent.com/46835920/120933994-2d6b0e80-c71a-11eb-8890-0e161f588e5b.png)
-![image](https://user-images.githubusercontent.com/46835920/120934005-352ab300-c71a-11eb-89f7-d214a0c00374.png)
+<img width="163" alt="Empty" src="https://user-images.githubusercontent.com/46835920/125243912-8989fb00-e2a3-11eb-90af-73b6282686ce.png">
+<img width="163" alt="Ok" src="https://user-images.githubusercontent.com/46835920/125243918-8abb2800-e2a3-11eb-9819-b3d7065b0a10.png">
+<img width="163" alt="Easy" src="https://user-images.githubusercontent.com/46835920/125243907-8858ce00-e2a3-11eb-8ee0-5eea043b4394.png">
+<img width="163" alt="Medium" src="https://user-images.githubusercontent.com/46835920/125243915-8a229180-e2a3-11eb-87c2-838b0875badb.png">
+<img width="163" alt="Strong" src="https://user-images.githubusercontent.com/46835920/125243920-8b53be80-e2a3-11eb-889c-80ecfa7a43a3.png">
+<img width="163" alt="VStrong" src="https://user-images.githubusercontent.com/46835920/125243925-8bec5500-e2a3-11eb-96aa-27f7e7a26779.png">
+
 
 
 # How to use?
