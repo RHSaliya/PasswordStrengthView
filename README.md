@@ -55,4 +55,4 @@ To just calculate strength
 ```
 
 # Support me
-<a href="https://www.paypal.com/paypalme/RHSDev" _blank><img width="72" alt="Easy" src="https://user-images.githubusercontent.com/46835920/125244624-64e25300-e2a4-11eb-88a1-64de1c07c9a3.png"></a>
+<a href="https://www.paypal.com/paypalme/RHSDev" target="_blank"><img width="72" alt="Easy" src="https://user-images.githubusercontent.com/46835920/125244624-64e25300-e2a4-11eb-88a1-64de1c07c9a3.png"></a>
