@@ -98,9 +98,10 @@ public class Continuous extends Style {
 
         if (status != EMPTY) {
             paint.setAlpha(255);
-            rect.set(pStart, y - indicatorHeight, right, y + indicatorHeight);
-            canvas.drawRoundRect(rect, indicatorRadius, indicatorRadius, paint);
         }
+
+        rect.set(pStart, y - indicatorHeight, right, y + indicatorHeight);
+        canvas.drawRoundRect(rect, indicatorRadius, indicatorRadius, paint);
     }
 
     @Override

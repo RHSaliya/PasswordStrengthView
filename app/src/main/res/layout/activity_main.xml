@@ -10,6 +10,16 @@
 
 
     <com.rhs.psw.PasswordStrengthView
+        android:id="@+id/passwordS"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="8dp"
+        app:space_between="-12dp"
+        app:indicatorRadius="24dp"
+        android:paddingHorizontal="5dp"
+        app:empty_color="#ddd"/>
+
+    <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
