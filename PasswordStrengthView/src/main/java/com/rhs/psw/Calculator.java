@@ -4,16 +4,17 @@ import android.util.Log;
 
 import java.util.HashMap;
 
+import static com.rhs.psw.PasswordStrengthView.EMPTY;
+import static com.rhs.psw.PasswordStrengthView.STRONG;
+import static com.rhs.psw.PasswordStrengthView.VERY_STRONG;
+import static com.rhs.psw.PasswordStrengthView.MEDIUM;
+import static com.rhs.psw.PasswordStrengthView.OK;
+import static com.rhs.psw.PasswordStrengthView.WEAK;
+
 public class Calculator {
     public static final int INCREMENTAL = 10;
     public static final int FRACTIONAL = 11;
 
-    public static final int VERY_STRONG = 1;
-    public static final int STRONG = 2;
-    public static final int MEDIUM = 3;
-    public static final int OK = 4;
-    public static final int WEAK = 5;
-    public static final int EMPTY = 0;
     protected static float score;
     private int status = EMPTY;
     private float reducer = 0.5f;

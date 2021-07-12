@@ -8,14 +8,61 @@
     android:gravity="center"
     android:orientation="vertical">
 
+
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="24sp"
-        app:indicatorWidth="16dp"
+        android:layout_margin="8dp"
+        app:space_between="-10dp"
+        android:paddingHorizontal="6dp"
         app:empty_color="#ddd"/>
-    
+
+    <com.rhs.psw.PasswordStrengthView
+        android:id="@+id/passwordSV0"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:indicatorWidth="4dp"
+        app:empty_color="#ddd"/>
+
+    <com.rhs.psw.PasswordStrengthView
+        android:id="@+id/passwordSV1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8sp"
+        app:indicatorRadius="20dp"
+        app:empty_color="#ddd"/>
+
+    <com.rhs.psw.PasswordStrengthView
+        android:id="@+id/passwordSV2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:indicatorRadius="0dp"
+        app:indicatorWidth="10dp"
+        app:indicatorHeight="10dp"
+        app:empty_color="#ddd"/>
+
+    <com.rhs.psw.PasswordStrengthView
+        android:id="@+id/passwordSV3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:indicatorWidth="12dp"
+        app:indicatorHeight="12dp"
+        app:empty_color="#ddd"/>
+
+    <com.rhs.psw.PasswordStrengthView
+        android:id="@+id/passwordSV4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:type="continuous"
+        app:indicatorWidth="36dp"
+        app:indicatorHeight="10dp"
+        app:empty_color="#ddd"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

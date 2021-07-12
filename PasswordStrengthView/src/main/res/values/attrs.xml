@@ -6,7 +6,24 @@
         <attr name="ok_color" format="color" />
         <attr name="weak_color" format="color" />
         <attr name="empty_color" format="color"/>
-        <attr name="scores" format="string"/>
+        <!--<attr name="scores" format="enum">
+            <enum name="10-20-30-40" value="10-20-30-40" />
+        </attr>-->
+        <attr name="scores" format="string">
+        </attr>
+         <attr name="status" format="enum">
+            <enum name="empty" value="0" />
+            <enum name="very_strong" value="1" />
+            <enum name="strong" value="2" />
+            <enum name="medium" value="3" />
+            <enum name="ok" value="4" />
+            <enum name="weak" value="5" />
+        </attr>
+         <attr name="type" format="enum">
+            <enum name="discrete" value="0" />
+            <enum name="continuous" value="1" />
+        </attr>
+        <attr name="manual_mode" format="boolean"/>
         <attr name="indicatorHeight" format="dimension"/>
         <attr name="indicatorRadius" format="dimension"/>
         <attr name="indicatorWidth" format="dimension"/>
