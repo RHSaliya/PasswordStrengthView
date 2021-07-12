@@ -12,7 +12,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         EditText keyET = findViewById(R.id.keyET);
-        PasswordStrengthView passwordS= findViewById(R.id.passwordS);
         PasswordStrengthView passwordSV= findViewById(R.id.passwordSV);
         PasswordStrengthView passwordSV0= findViewById(R.id.passwordSV0);
         PasswordStrengthView passwordSV1= findViewById(R.id.passwordSV1);
@@ -20,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
         PasswordStrengthView passwordSV3= findViewById(R.id.passwordSV3);
         PasswordStrengthView passwordSV4= findViewById(R.id.passwordSV4);
 
-        passwordS.attachEditText(keyET);
         passwordSV.attachEditText(keyET);
         passwordSV0.attachEditText(keyET);
         passwordSV1.attachEditText(keyET);

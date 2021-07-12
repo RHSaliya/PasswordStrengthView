@@ -10,29 +10,20 @@
 
 
     <com.rhs.psw.PasswordStrengthView
-        android:id="@+id/passwordS"
+        android:id="@+id/passwordSV"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:space_between="-12dp"
         app:indicatorRadius="24dp"
         android:paddingHorizontal="5dp"
         app:empty_color="#ddd"/>
 
     <com.rhs.psw.PasswordStrengthView
-        android:id="@+id/passwordSV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:space_between="-10dp"
-        android:paddingHorizontal="6dp"
-        app:empty_color="#ddd"/>
-
-    <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:indicatorWidth="4dp"
         app:empty_color="#ddd"/>
 
@@ -48,7 +39,7 @@
         android:id="@+id/passwordSV2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:indicatorRadius="0dp"
         app:indicatorWidth="10dp"
         app:indicatorHeight="10dp"
@@ -58,7 +49,7 @@
         android:id="@+id/passwordSV3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:indicatorWidth="12dp"
         app:indicatorHeight="12dp"
         app:empty_color="#ddd"/>
@@ -67,10 +58,11 @@
         android:id="@+id/passwordSV4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="4dp"
         app:type="continuous"
-        app:indicatorWidth="36dp"
-        app:indicatorHeight="10dp"
+        app:indicatorRadius="12dp"
+        app:indicatorWidth="32dp"
+        app:indicatorHeight="8dp"
         app:empty_color="#ddd"/>
 
     <com.google.android.material.textfield.TextInputLayout
