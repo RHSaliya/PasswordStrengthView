@@ -8,9 +8,8 @@ import android.graphics.RectF;
 import com.rhs.psw.PasswordStrengthView;
 import com.rhs.psw.R;
 
-public class Discrete extends Style {
+public class Discrete extends PSVStyle {
 
-    private final PasswordStrengthView psv;
     private final RectF rect = new RectF();
     private int increment, indicatorWidth, indicatorHeight;
     private int width = -1, height, pStart, pEnd, pTop, pBottom;
@@ -18,7 +17,7 @@ public class Discrete extends Style {
     private float indicatorRadius;
     private int disableAlpha;
     private final TypedArray tArr;
-    private int veryStrongColor, strongColor, mediumColor, okColor, weakColor, emptyColor;
+    private int veryStrongColor, strongColor, mediumColor, okColor, weakColor;
     private int spaceBetween;
     public boolean shouldRefresh;
     private boolean matchWidth, matchHeight;
@@ -40,7 +39,7 @@ public class Discrete extends Style {
         mediumColor = tArr.getColor(R.styleable.PasswordStrengthView_medium_color, 0xffFFC107);
         okColor = tArr.getColor(R.styleable.PasswordStrengthView_ok_color, 0xffFF9800);
         weakColor = tArr.getColor(R.styleable.PasswordStrengthView_weak_color, 0xffFF5722);
-        emptyColor = tArr.getColor(R.styleable.PasswordStrengthView_empty_color, 0xffaaaaaa);
+        backgroundColor = tArr.getColor(R.styleable.PasswordStrengthView_background_color, 0xffaaaaaa);
 
         indicatorHeight = (int) tArr.getDimension(R.styleable.PasswordStrengthView_indicatorHeight, -1);
         indicatorWidth = (int) tArr.getDimension(R.styleable.PasswordStrengthView_indicatorWidth, -1);
@@ -49,6 +48,8 @@ public class Discrete extends Style {
 
         matchWidth = indicatorWidth == -1;
         matchHeight = indicatorHeight == -1;
+
+        fixBackgroundColor = tArr.getBoolean(R.styleable.PasswordStrengthView_fixBackgroundColor, false);
 
         tArr.recycle();
     }
@@ -65,7 +66,7 @@ public class Discrete extends Style {
 
         if (matchWidth) {
             if (width != 0) {
-                indicatorWidth = width - pStart - pEnd - spaceBetween*5;
+                indicatorWidth = width - pStart - pEnd - spaceBetween * 5;
                 indicatorWidth = indicatorWidth / 10;
             } else {
                 indicatorWidth = 20;
@@ -76,7 +77,7 @@ public class Discrete extends Style {
         if (matchHeight) {
             if (height != 0) {
                 indicatorHeight = height - pTop - pBottom;
-                indicatorHeight = indicatorHeight/2;
+                indicatorHeight = indicatorHeight / 2;
             } else {
                 indicatorHeight = 20;
             }
@@ -105,37 +106,34 @@ public class Discrete extends Style {
                 paint.setColor(weakColor);
                 break;
             default:
-                paint.setColor(emptyColor);
+                paint.setColor(backgroundColor);
         }
 
-        int x = width + pStart - pEnd - 4 * increment;
-        x /= 2;
-        int y = height + pTop - pBottom;
-        y /= 2;
+        int x = (width + pStart - pEnd - 4 * increment)/2;
+        int y = (height + pTop - pBottom)/2;
 
 
         rect.set(x - indicatorWidth, y - indicatorHeight, x + indicatorWidth, y + indicatorHeight);
         canvas.drawRoundRect(rect, indicatorRadius, indicatorRadius, paint);
 
-        if (status == WEAK) paint.setAlpha(disableAlpha);
+        x = draw(canvas, x, y, status == WEAK);
+        x = draw(canvas, x, y, status == OK);
+        x = draw(canvas, x, y, status == MEDIUM);
+        x = draw(canvas, x, y, status == STRONG);
+    }
+
+    private int draw(Canvas canvas, int x, int y, boolean shouldHide) {
+        if (shouldHide) {
+            if (fixBackgroundColor) {
+                paint.setColor(backgroundColor);
+            } else {
+                paint.setAlpha(disableAlpha);
+            }
+        }
         x += increment;
         rect.set(x - indicatorWidth, y - indicatorHeight, x + indicatorWidth, y + indicatorHeight);
         canvas.drawRoundRect(rect, indicatorRadius, indicatorRadius, paint);
-
-        if (status == OK) paint.setAlpha(disableAlpha);
-        x += increment;
-        rect.set(x - indicatorWidth, y - indicatorHeight, x + indicatorWidth, y + indicatorHeight);
-        canvas.drawRoundRect(rect, indicatorRadius, indicatorRadius, paint);
-
-        if (status == MEDIUM) paint.setAlpha(disableAlpha);
-        x += increment;
-        rect.set(x - indicatorWidth, y - indicatorHeight, x + indicatorWidth, y + indicatorHeight);
-        canvas.drawRoundRect(rect, indicatorRadius, indicatorRadius, paint);
-
-        if (status == STRONG) paint.setAlpha(disableAlpha);
-        x += increment;
-        rect.set(x - indicatorWidth, y - indicatorHeight, x + indicatorWidth, y + indicatorHeight);
-        canvas.drawRoundRect(rect, indicatorRadius, indicatorRadius, paint);
+        return x;
     }
 
     @Override
@@ -147,5 +145,4 @@ public class Discrete extends Style {
     public int getDesiredHeight() {
         return pTop + pBottom + indicatorHeight * 2;
     }
-
 }

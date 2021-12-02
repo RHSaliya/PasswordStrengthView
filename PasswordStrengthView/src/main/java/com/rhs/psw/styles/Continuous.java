@@ -1,5 +1,6 @@
 package com.rhs.psw.styles;
 
+import android.animation.ValueAnimator;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -8,19 +9,18 @@ import android.graphics.RectF;
 import com.rhs.psw.PasswordStrengthView;
 import com.rhs.psw.R;
 
-public class Continuous extends Style {
+public class Continuous extends PSVStyle {
 
-    private final PasswordStrengthView psv;
     private final RectF rect = new RectF();
     private final TypedArray tArr;
     private int increment, indicatorWidth, indicatorHeight;
-    private int veryStrongColor, strongColor, mediumColor, okColor, weakColor, emptyColor;
+    private int veryStrongColor, strongColor, mediumColor, okColor, weakColor;
     private int width = -1, height, pStart, pEnd, pTop, pBottom;
+    private int currentColor;
     private Paint paint;
     private float indicatorRadius;
     private int disableAlpha;
     public boolean shouldRefresh;
-
 
     public Continuous(PasswordStrengthView passwordStrengthView, TypedArray tArr) {
         this.psv = passwordStrengthView;
@@ -38,11 +38,13 @@ public class Continuous extends Style {
         mediumColor = tArr.getColor(R.styleable.PasswordStrengthView_medium_color, 0xffFFC107);
         okColor = tArr.getColor(R.styleable.PasswordStrengthView_ok_color, 0xffFF9800);
         weakColor = tArr.getColor(R.styleable.PasswordStrengthView_weak_color, 0xffFF5722);
-        emptyColor = tArr.getColor(R.styleable.PasswordStrengthView_empty_color, 0xffaaaaaa);
+        backgroundColor = tArr.getColor(R.styleable.PasswordStrengthView_background_color, 0xffaaaaaa);
 
         indicatorWidth = (int) tArr.getDimension(R.styleable.PasswordStrengthView_indicatorWidth, 20);
         indicatorHeight = (int) tArr.getDimension(R.styleable.PasswordStrengthView_indicatorHeight, 20);
         indicatorRadius = (int) tArr.getDimension(R.styleable.PasswordStrengthView_indicatorRadius, 20);
+
+        fixBackgroundColor = tArr.getBoolean(R.styleable.PasswordStrengthView_fixBackgroundColor, false);
 
         tArr.recycle();
     }
@@ -63,42 +65,46 @@ public class Continuous extends Style {
     public void draw(Canvas canvas, int status) {
         if (width != psv.getWidth() || shouldRefresh) refresh();
 
-        int y = height + pTop - pBottom;
-        y /= 2;
+        int y = (height + pTop - pBottom)/2;
 
         int right = width - pEnd;
         switch (status) {
             case VERY_STRONG:
-                paint.setColor(veryStrongColor);
+                currentColor = veryStrongColor;
                 break;
             case STRONG:
                 right -= increment;
-                paint.setColor(strongColor);
+                currentColor = strongColor;
                 break;
             case MEDIUM:
                 right -= increment * 2;
-                paint.setColor(mediumColor);
+                currentColor = mediumColor;
                 break;
             case OK:
                 right -= increment * 3;
-                paint.setColor(okColor);
+                currentColor = okColor;
                 break;
             case WEAK:
                 right -= increment * 4;
-                paint.setColor(weakColor);
+                currentColor = weakColor;
                 break;
             default:
-                paint.setColor(emptyColor);
+                currentColor = backgroundColor;
         }
 
-        paint.setAlpha(disableAlpha);
+        if (fixBackgroundColor) {
+            paint.setColor(backgroundColor);
+        } else {
+            paint.setColor(currentColor);
+            paint.setAlpha(disableAlpha);
+        }
         rect.set(pStart, y - indicatorHeight, width - pEnd, y + indicatorHeight);
         canvas.drawRoundRect(rect, indicatorRadius, indicatorRadius, paint);
 
+        if (status != EMPTY) paint.setAlpha(255);
 
-        if (status != EMPTY) {
-            paint.setAlpha(255);
-        }
+        if (fixBackgroundColor) paint.setColor(currentColor);
+
 
         rect.set(pStart, y - indicatorHeight, right, y + indicatorHeight);
         canvas.drawRoundRect(rect, indicatorRadius, indicatorRadius, paint);
@@ -112,5 +118,9 @@ public class Continuous extends Style {
     @Override
     public int getDesiredHeight() {
         return pTop + pBottom + indicatorHeight * 2;
+    }
+
+    public int getCurrentColor() {
+        return currentColor;
     }
 }

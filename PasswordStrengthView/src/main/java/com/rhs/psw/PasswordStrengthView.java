@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 
 import com.rhs.psw.styles.Continuous;
 import com.rhs.psw.styles.Discrete;
-import com.rhs.psw.styles.Style;
+import com.rhs.psw.styles.PSVStyle;
 
 import static com.rhs.psw.R.styleable;
 
@@ -25,7 +25,6 @@ public class PasswordStrengthView extends View {
     public static final int MEDIUM = 3;
     public static final int STRONG = 4;
     public static final int VERY_STRONG = 5;
-
     public static final int DISCRETE = 0;
     public static final int CONTINUOUS = 1;
 
@@ -33,7 +32,7 @@ public class PasswordStrengthView extends View {
     private Calculator calculator;
     private int status;
     private boolean isManualMode;
-    private Style style;
+    private PSVStyle psvStyle;
 
     public PasswordStrengthView(Context context) {
         super(context);
@@ -74,11 +73,11 @@ public class PasswordStrengthView extends View {
         int type = tArr.getInt(styleable.PasswordStrengthView_type, DISCRETE);
         switch (type) {
             case CONTINUOUS: {
-                style = new Continuous(this, tArr);
+                psvStyle = new Continuous(this, tArr);
                 break;
             }
             default: {
-                style = new Discrete(this, tArr);
+                psvStyle = new Discrete(this, tArr);
             }
         }
 
@@ -88,7 +87,7 @@ public class PasswordStrengthView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         int currentStatus = (isManualMode) ? status : calculator.getStatus();
-        style.draw(canvas, currentStatus);
+        psvStyle.draw(canvas, currentStatus);
         super.onDraw(canvas);
     }
 
@@ -131,10 +130,10 @@ public class PasswordStrengthView extends View {
             width = widthSize;
         } else if (widthMode == MeasureSpec.AT_MOST) {
             //Can't be bigger than...
-            width = Math.min(style.getDesiredWidth(), widthSize);
+            width = Math.min(psvStyle.getDesiredWidth(), widthSize);
         } else {
             //Be whatever you want
-            width = style.getDesiredWidth();
+            width = psvStyle.getDesiredWidth();
         }
 
         //Measure Height
@@ -143,10 +142,10 @@ public class PasswordStrengthView extends View {
             height = heightSize;
         } else if (heightMode == MeasureSpec.AT_MOST) {
             //Can't be bigger than...
-            height = Math.min(style.getDesiredHeight(), heightSize);
+            height = Math.min(psvStyle.getDesiredHeight(), heightSize);
         } else {
             //Be whatever you want
-            height = style.getDesiredHeight();
+            height = psvStyle.getDesiredHeight();
         }
 
         //MUST CALL THIS
@@ -180,4 +179,5 @@ public class PasswordStrengthView extends View {
     public float getScore() {
         return calculator.getScore();
     }
+
 }

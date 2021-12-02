@@ -5,7 +5,7 @@
         <attr name="medium_color" format="color" />
         <attr name="ok_color" format="color" />
         <attr name="weak_color" format="color" />
-        <attr name="empty_color" format="color"/>
+        <attr name="background_color" format="color"/>
         <!--<attr name="scores" format="enum">
             <enum name="10-20-30-40" value="10-20-30-40" />
         </attr>-->
@@ -24,6 +24,7 @@
             <enum name="continuous" value="1" />
         </attr>
         <attr name="manual_mode" format="boolean"/>
+        <attr name="fixBackgroundColor" format="boolean"/>
         <attr name="indicatorHeight" format="dimension"/>
         <attr name="indicatorRadius" format="dimension"/>
         <attr name="indicatorWidth" format="dimension"/>

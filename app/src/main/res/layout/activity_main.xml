@@ -17,7 +17,7 @@
         app:space_between="-12dp"
         app:indicatorRadius="24dp"
         android:paddingHorizontal="5dp"
-        app:empty_color="#ddd"/>
+        app:background_color="#ddd"/>
 
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV0"
@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
         app:indicatorWidth="4dp"
-        app:empty_color="#ddd"/>
+        app:background_color="#ddd"/>
 
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV1"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="8sp"
         app:indicatorRadius="20dp"
-        app:empty_color="#ddd"/>
+        app:background_color="#ddd"/>
 
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV2"
@@ -43,7 +43,7 @@
         app:indicatorRadius="0dp"
         app:indicatorWidth="10dp"
         app:indicatorHeight="10dp"
-        app:empty_color="#ddd"/>
+        app:background_color="#ddd"/>
 
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV3"
@@ -52,7 +52,7 @@
         android:layout_margin="4dp"
         app:indicatorWidth="12dp"
         app:indicatorHeight="12dp"
-        app:empty_color="#ddd"/>
+        app:background_color="#ddd"/>
 
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV4"
@@ -63,7 +63,7 @@
         app:indicatorRadius="12dp"
         app:indicatorWidth="32dp"
         app:indicatorHeight="8dp"
-        app:empty_color="#ddd"/>
+        app:background_color="#ddd"/>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
