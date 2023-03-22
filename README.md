@@ -53,6 +53,3 @@ To just calculate strength
         calculator.initScores(10,20,30,40);
         calculator.calculate("Password",Calculator.INCREMENTAL);
 ```
-
-# Support me
-<a href="https://www.paypal.com/paypalme/RHSDev" target="_blank"><img width="72" alt="Easy" src="https://user-images.githubusercontent.com/46835920/125244624-64e25300-e2a4-11eb-88a1-64de1c07c9a3.png"></a>
