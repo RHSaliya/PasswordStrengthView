@@ -58,7 +58,7 @@ public class PasswordStrengthView extends View {
         TypedArray tArr = context.obtainStyledAttributes(attrs, styleable.PasswordStrengthView, 0, 0);
 
 
-        status = (int) tArr.getDimension(styleable.PasswordStrengthView_status, 0);
+        status = tArr.getInt(styleable.PasswordStrengthView_status, EMPTY);
         isManualMode = tArr.getBoolean(styleable.PasswordStrengthView_manual_mode, false);
 
         String scores = tArr.getString(styleable.PasswordStrengthView_scores);

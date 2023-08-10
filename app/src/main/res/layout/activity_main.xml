@@ -4,88 +4,105 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:gravity="center"
-    android:orientation="vertical">
-
+    android:orientation="vertical"
+    tools:context=".MainActivity">
 
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV"
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_margin="4dp"
-        app:space_between="-12dp"
-        app:indicatorRadius="24dp"
         android:paddingHorizontal="5dp"
-        app:background_color="#ddd"/>
+        app:background_color="#ddd"
+        app:indicatorRadius="24dp"
+        app:space_between="-12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="View 1" />
 
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV0"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        app:indicatorWidth="4dp"
-        app:background_color="#ddd"/>
+        app:background_color="#ddd"
+        app:indicatorWidth="4dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="View 2" />
 
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8sp"
-        app:indicatorRadius="20dp"
-        app:background_color="#ddd"/>
+        app:background_color="#ddd"
+        app:indicatorHeight="10dp"
+        app:indicatorRadius="0dp"
+        app:indicatorWidth="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="View 3" />
 
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        app:indicatorRadius="0dp"
-        app:indicatorWidth="10dp"
-        app:indicatorHeight="10dp"
-        app:background_color="#ddd"/>
+        app:background_color="#ddd"
+        app:indicatorHeight="12dp"
+        app:indicatorWidth="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="View 3" />
 
     <com.rhs.psw.PasswordStrengthView
         android:id="@+id/passwordSV3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        app:indicatorWidth="12dp"
-        app:indicatorHeight="12dp"
-        app:background_color="#ddd"/>
-
-    <com.rhs.psw.PasswordStrengthView
-        android:id="@+id/passwordSV4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="4dp"
-        app:type="continuous"
+        app:background_color="#ddd"
+        app:indicatorHeight="8dp"
         app:indicatorRadius="12dp"
         app:indicatorWidth="32dp"
-        app:indicatorHeight="8dp"
-        app:background_color="#ddd"/>
+        app:type="continuous" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="View 5" />
 
     <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:boxBackgroundColor="#eee"
         android:layout_margin="36dp"
-        app:boxCornerRadiusTopStart="12dp"
-        app:boxCornerRadiusTopEnd="12dp"
-        app:boxCornerRadiusBottomStart="12dp"
+        app:boxBackgroundColor="#eee"
         app:boxCornerRadiusBottomEnd="12dp"
-        app:hintEnabled="false"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
         app:boxStrokeColor="#eee"
+        app:hintEnabled="false"
         app:passwordToggleEnabled="true">
+
         <EditText
             android:id="@+id/keyET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/enter_password"
+            android:importantForAutofill="no"
             android:inputType="textPassword"
-            android:maxLength="24"
-            android:importantForAutofill="no" />
+            android:maxLength="24" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>
