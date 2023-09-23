@@ -18,7 +18,13 @@ import com.rhs.psw.styles.PSVStyle;
 import static com.rhs.psw.R.styleable;
 
 
+/**
+ * Main class for the PasswordStrengthView library
+ *
+ * @author Rahul Saliya
+ */
 public class PasswordStrengthView extends View {
+
     public static final int EMPTY = 0;
     public static final int WEAK = 1;
     public static final int OK = 2;
@@ -49,6 +55,12 @@ public class PasswordStrengthView extends View {
         init(context, attrs);
     }
 
+    /**
+     * Initialize the view
+     *
+     * @param context the context
+     * @param attrs the attributes
+     */
     private void init(Context context, AttributeSet attrs) {
         int[] attrsArray = new int[]{
                 android.R.attr.layout_width,    // 2
@@ -91,11 +103,21 @@ public class PasswordStrengthView extends View {
         super.onDraw(canvas);
     }
 
+    /**
+     * This function is to be called when the password is changed
+     *
+     * @param str the string to be checked
+     */
     public void update(String str) {
         calculator.calculate(str, Calculator.INCREMENTAL);
         invalidate();
     }
 
+    /**
+     * This function is used to attach an edit text to the view
+     *
+     * @param editText the edit text to be attached
+     */
     public void attachEditText(EditText editText) {
         editText.addTextChangedListener(new TextWatcher() {
             @Override
@@ -152,15 +174,30 @@ public class PasswordStrengthView extends View {
         setMeasuredDimension(width, height);
     }
 
+    /**
+     * This function is used to set opacity of the indicator when the password is empty
+     *
+     * @param disableAlpha the opacity from 0 to 100
+     */
     public void setDisableAlpha(int disableAlpha) {
         this.disableAlpha = disableAlpha;
     }
 
 
+    /**
+     * This function is used to get disabled opacity
+     *
+     * @return the opacity
+     */
     public int getDisableAlpha() {
         return disableAlpha;
     }
 
+    /**
+     * This function is used to get the strength status for the password
+     *
+     * @return the status
+     */
     public int getStatus() {
         if (isManualMode) {
             return status;
@@ -168,14 +205,29 @@ public class PasswordStrengthView extends View {
         return calculator.getStatus();
     }
 
+    /**
+     * This function is used to set the strength status for the password manually
+     *
+     * @param status the status
+     */
     public void setManualStatus(int status) {
         this.status = status;
     }
 
+    /**
+     * This function is used to check if the strength status is set manually
+     *
+     * @param manualMode the manual mode status
+     */
     public void isManualMode(boolean manualMode) {
         isManualMode = manualMode;
     }
 
+    /**
+     * This function is used to get the strength score for the password
+     *
+     * @return the score for the password
+     */
     public float getScore() {
         return calculator.getScore();
     }

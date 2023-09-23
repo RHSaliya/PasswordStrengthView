@@ -1,6 +1,5 @@
 package com.rhs.psw.styles;
 
-import android.animation.ValueAnimator;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
@@ -9,6 +8,11 @@ import android.graphics.RectF;
 import com.rhs.psw.PasswordStrengthView;
 import com.rhs.psw.R;
 
+/**
+ * Continuous style for the PasswordStrengthView library, this style will show the strength of the password in a continuous line
+ *
+ * @author Rahul Saliya
+ */
 public class Continuous extends PSVStyle {
 
     private final RectF rect = new RectF();
@@ -22,12 +26,21 @@ public class Continuous extends PSVStyle {
     private int disableAlpha;
     public boolean shouldRefresh;
 
+    /**
+     * Constructor for the Continuous style
+     *
+     * @param passwordStrengthView the PasswordStrengthView
+     * @param tArr                 the TypedArray
+     */
     public Continuous(PasswordStrengthView passwordStrengthView, TypedArray tArr) {
         this.psv = passwordStrengthView;
         this.tArr = tArr;
         init();
     }
 
+    /**
+     * Initialize the style
+     */
     private void init() {
         paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
@@ -49,6 +62,9 @@ public class Continuous extends PSVStyle {
         tArr.recycle();
     }
 
+    /**
+     * Refresh the style after the view is changed
+     */
     public void refresh() {
         shouldRefresh = false;
         width = psv.getWidth();
@@ -120,6 +136,11 @@ public class Continuous extends PSVStyle {
         return pTop + pBottom + indicatorHeight * 2;
     }
 
+    /**
+     * Get the current color of the style
+     *
+     * @return the current color
+     */
     public int getCurrentColor() {
         return currentColor;
     }

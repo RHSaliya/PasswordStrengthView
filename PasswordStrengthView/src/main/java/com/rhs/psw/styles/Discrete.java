@@ -8,6 +8,9 @@ import android.graphics.RectF;
 import com.rhs.psw.PasswordStrengthView;
 import com.rhs.psw.R;
 
+/**
+ * Discrete style for the PasswordStrengthView library, this style will show the strength of the password in discrete blocks
+ */
 public class Discrete extends PSVStyle {
 
     private final RectF rect = new RectF();
@@ -22,6 +25,12 @@ public class Discrete extends PSVStyle {
     public boolean shouldRefresh;
     private boolean matchWidth, matchHeight;
 
+    /**
+     * Constructor for the Discrete style
+     *
+     * @param psv   the PasswordStrengthView
+     * @param tArr  the TypedArray
+     */
     public Discrete(PasswordStrengthView psv, TypedArray tArr) {
         this.psv = psv;
         this.tArr = tArr;
@@ -29,6 +38,9 @@ public class Discrete extends PSVStyle {
         refresh();
     }
 
+    /**
+     * Initialize the style
+     */
     private void init() {
         paint = new Paint();
         paint.setStyle(Paint.Style.FILL);
@@ -54,6 +66,9 @@ public class Discrete extends PSVStyle {
         tArr.recycle();
     }
 
+    /**
+     * Refresh the style after the view is changed
+     */
     public void refresh() {
         shouldRefresh = false;
         width = psv.getWidth();
